@@ -41,19 +41,19 @@ public class ComparadorPersonas implements Comparator<Persona> {
 			break;
 			
 		case ASCENDENTE_PESO:
-			comOrdenar1 = DESCENDENTE_NOMBRE;
+			comOrdenar1 = DESCENDENTE_ALTURA;
 			break;
 			
 		case DESCENDENTE_PESO:
-			comOrdenar1 = DESCENDENTE_NOMBRE;
+			comOrdenar1 = DESCENDENTE_ALTURA;
 			break;
 			
 		case ASCENDENTE_ALTURA:
-			comOrdenar1 = DESCENDENTE_NOMBRE;
+			comOrdenar1 = DESCENDENTE_PESO;
 			break;
 			
 		case DESCENDENTE_ALTURA:
-			comOrdenar1 = DESCENDENTE_NOMBRE;
+			comOrdenar1 = DESCENDENTE_PESO;
 			break;
 		}
 	}
@@ -84,7 +84,26 @@ public class ComparadorPersonas implements Comparator<Persona> {
 			devolver = p2.getNombre().charAt(0) - p1.getNombre().charAt(0);
 			if (devolver == 0) devolver = p2.getEdad() - p1.getEdad();
 			break;
-
+			
+		case ASCENDENTE_PESO:
+			devolver = p1.getPeso() - p2.getPeso();
+			if (devolver == 0) devolver = p1.getAltura() - p2.getAltura();
+			break;
+			
+		case DESCENDENTE_PESO:
+			devolver = p2.getPeso() - p1.getPeso();
+			if (devolver == 0) devolver = p2.getAltura() - p1.getAltura();
+			break;
+			
+		case ASCENDENTE_ALTURA:
+			devolver = p1.getAltura() - p2.getAltura();
+			if (devolver == 0) devolver = p1.getPeso() - p2.getPeso();
+			break;
+			
+		case DESCENDENTE_ALTURA:
+			devolver = p2.getAltura() - p1.getAltura();
+			if (devolver == 0) devolver = p2.getPeso() - p1.getPeso();
+			break;
 		}
 
 		return devolver;

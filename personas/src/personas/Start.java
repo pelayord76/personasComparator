@@ -24,7 +24,7 @@ public class Start {
 		Arrays.sort(personas, cp);
 		System.out.println(Arrays.toString(personas));
 
-		cp.setComOrdenar(ComparadorPersonas.ASCENDENTE_EDAD);
+		cp.setComOrdenar(ComparadorPersonas.ASCENDENTE_ALTURA);
 		Arrays.sort(personas, cp);
 		System.out.println(Arrays.toString(personas));
 
